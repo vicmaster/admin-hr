@@ -22,7 +22,10 @@ group :test, :development do
   gem 'annotate'
   gem 'capybara-webkit'
   gem 'capybara'
+  gem 'debugger'
   gem 'fabrication'
+  gem 'guard-bundler'
   gem 'guard-rspec'
+  gem 'guard-spork'
   gem 'rspec-rails'
 end
