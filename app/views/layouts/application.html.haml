@@ -6,18 +6,19 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
 
-  %body.login-page
-    %header#main-header
+  %body
+    %header
       = render 'shared/navbar'
-      %p.notice= notice
-      %p.alert= alert
-      .navbar.navbar-inverse
-        = link_to 'Welcome', '#'
-        = link_to('Sign out', destroy_admin_session_path, :method => :delete)
-    %section#main
+      - unless notice.blank? && alert.blank?
+        - unless notice.blank?
+          %p.notice= notice
+      - unless alert.blank?
+        .notification.red
+          %p.alert= alert
 
+    %section
       = yield
-    %footer#main-footer
+    %footer
       footer
 
     :javascript
