@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121013010122) do
+ActiveRecord::Schema.define(:version => 20121013174050) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -30,5 +30,34 @@ ActiveRecord::Schema.define(:version => 20121013010122) do
 
   add_index "admins", ["email"], :name => "index_admins_on_email", :unique => true
   add_index "admins", ["reset_password_token"], :name => "index_admins_on_reset_password_token", :unique => true
+
+  create_table "employees", :force => true do |t|
+    t.string   "status"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "nickname"
+    t.string   "middle_name"
+    t.string   "second_last_name"
+    t.date     "date_of_birth"
+    t.integer  "ssn"
+    t.string   "gender"
+    t.string   "marital_status"
+    t.string   "country"
+    t.text     "address_line_1"
+    t.text     "address_line_2"
+    t.string   "state"
+    t.integer  "zip_code"
+    t.string   "mobile_phone"
+    t.string   "home_phone"
+    t.string   "work_email"
+    t.string   "home_email"
+    t.string   "shirt_size"
+    t.string   "passport_number"
+    t.date     "passport_expiration_date"
+    t.string   "visa_type"
+    t.date     "visa_expiration_date"
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+  end
 
 end

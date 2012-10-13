@@ -4,4 +4,5 @@ window.AdminHr =
   Views: {}
   Routers: {}
 
-  init: -> alert 'Hello from Backbone!'
+  init: ->
+    console.log 'Hello from Backbone!'
