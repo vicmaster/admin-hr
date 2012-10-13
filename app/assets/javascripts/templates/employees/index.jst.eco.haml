@@ -1,1 +1,18 @@
-%h1 hola
+%h1#main-title LIST EMPLOYEES
+%form#new_employee
+  %label Status
+  %input{:name => "status", :type => "text"}
+  %label First Name
+  %input{:name => "first_name", :type => "text"}
+  %label Last Name
+  %input{:name => "last_name", :type => "text"}
+  %input#new_employee{:type => "submit", :value => "add"}
+%h1 List of Employees
+%table.table.table-striped
+  %thead
+    %tr
+      %th Status
+      %th First Name
+      %th Last Name
+      %th Action
+  %tbody#employees
