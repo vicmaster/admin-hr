@@ -1,0 +1,98 @@
+body.login-page {
+  section#main .wrap {
+    padding: 0 10px 35px;
+  }
+}
+
+.login-form-container {
+  width: 540px;
+  margin: 0 auto;
+  background: #fff;
+  .login-form-container-inner {
+    position: relative;
+    min-height:200px;
+    &:before, &:after {
+      bottom: 8px;
+      position: absolute;
+      width: 10%;
+      background:#000;
+      z-index: -1;
+      height: 94%;
+      content: "";
+      -webkit-box-shadow:0px 0px 50px rgba(0, 0, 0, 1);
+      -moz-box-shadow:0px 0px 50px rgba(0, 0, 0, 1);
+      -o-box-shadow:0px 0px 50px rgba(0, 0, 0, 1);
+      box-shadow:0px 0px 50px rgba(0, 0, 0, 1);
+    }
+    &:before {
+      left: 20px;
+      -webkit-transform: rotate(-3deg);
+      -moz-transform: rotate(-3deg);
+      -o-transform: rotate(-3deg);
+      transform: rotate(-3deg);
+
+    }
+    &:after {
+      right: 20px;
+      -webkit-transform: rotate(3deg);
+      -moz-transform: rotate(3deg);
+      -o-transform: rotate(3deg);
+      transform: rotate(3deg);
+    }
+
+  }
+}
+
+.login-form-container-inner {
+  position: relative;
+  .btn-med {
+    width: 120px;
+  }
+  .box-header {
+    padding:35px 70px 20px;
+  }
+  .box-body {
+    padding: 0 70px 30px;
+    #admin_remember_me{
+      float: left;
+      margin-right: 6px;
+    }
+  }
+  .form-note {
+    margin-top: 15px;
+    a {
+      text-decoration: underline;
+    }
+  }
+  .box-footer{
+    background-color: grey;
+    padding: 15px 70px;
+    .form-note {
+      margin: 0;
+    }
+  }
+  .notice-message {
+    padding: 15px 40px 15px 15px;
+    &.success {
+      height: 20px !important;
+      .icon {
+        background-position: -59px -222px;
+        position: absolute;
+        left: 15px;
+        top: 15px;
+      }
+    }
+    &.alert {
+      .icon {
+        background-position: -79px -222px;
+        position: absolute;
+        left: 15px;
+        top: 15px;
+      }
+      .btn-close-corner {
+        background-position: -19px -242px;
+      }
+
+    }
+  }
+}

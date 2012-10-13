@@ -1,0 +1,33 @@
+/* colors ****************************************/
+
+$orange-text: #ce6111;
+$aqua-text: #73afb6;
+$dark-aqua-text: #477D8F;
+$light-aqua-text: #e4eff0;
+$purple-text: #995AA2;
+$gray-text: #999;
+$dark-gray-text: #666;
+$white-text: #fff;
+$brown-text: #6c3109;
+
+$gray-bg: #d4d4d4;
+$light-gray-bg: #f7f7f7;
+$yellow-bg: #eee27b;
+$orange-bg: #d68943; /* invalid or not complete stuff */
+$lemon-bg: #D0DC58; /* valid or completed stuff */
+$aqua-bg: #ebf3f4;
+$mid-opacity: 0.5;
+$error-bg: #FFEFCF;
+
+/* box sizing, paddings & borders ***********************/
+
+$thin-box-padding: 10px;
+$wide-box-padding: 15px;
+$line-break-margin: 15px;
+$default-font-family: 'Open Sans', 'Trebuchet MS', Trebuchet, Arial, sans-serif;
+
+/* mixin defaults ************************/
+$default-radius: 3px;
+$default-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.3);
+
+/*mixins *****************************/

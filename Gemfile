@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'devise'
 gem 'haml'
 gem 'jquery-rails'
 gem 'pg'
@@ -14,7 +14,6 @@ group :assets do
   gem 'haml_assets'
   gem 'sass-rails',   '~> 3.2.3'
   gem 'sass'
-  gem "twitter-bootstrap-rails"
   gem 'uglifier', '>= 1.0.3'
 end
 

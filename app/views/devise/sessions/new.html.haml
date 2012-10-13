@@ -1,0 +1,22 @@
+.login-form-container
+  .login-form-container-inner
+    .notice-message
+      %span.icon
+      %p.notice= notice
+      %p.alert= alert
+    .box-header
+      %p
+        %h1 Login to Admin HR
+    .box-body
+      = form_tag admin_session_path do
+        = label_tag(:admin_email, 'Correo')
+        = text_field_tag 'admin[email]', 'admin@test.com'
+        = label_tag(:admin_password, 'Contraseña')
+        = password_field_tag 'admin[password]', '12345679'
+        %br
+        = check_box_tag 'admin[remember_me]'
+        = label_tag 'admin[remember_me]', 'Remember me'
+        %button Sign in
+        %br
+        = render "devise/shared/links"
+    .box-footer
