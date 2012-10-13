@@ -26,5 +26,7 @@ group :test, :development do
   gem 'guard-bundler'
   gem 'guard-rspec'
   gem 'guard-spork'
+  gem 'launchy'
   gem 'rspec-rails'
+  gem 'simplecov', :require => false, :group => :test
 end
