@@ -3,9 +3,6 @@ class AdminHr.Routers.Employees extends Backbone.Router
     '' : 'dashboard'
     'crew' : 'manageCrew'
     'employee/:id' : 'editEmployee'
-  initialize: ->
-    @collection = new AdminHr.Collections.Employees()
-    @collection.fetch()
 
   manageCrew: ->
     @collection = new AdminHr.Collections.Employees()
@@ -20,7 +17,3 @@ class AdminHr.Routers.Employees extends Backbone.Router
   editEmployee: (employeeId) ->
     view = new AdminHr.Views.EmployeesEditView
     $('#container-app').html view.render().el
-
-
-
-
