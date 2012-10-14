@@ -1,4 +1,4 @@
-admin-hr
+Dedicated HR Manager
 ========
 
 Admin HR app
