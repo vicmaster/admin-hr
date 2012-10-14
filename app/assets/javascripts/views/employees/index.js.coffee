@@ -11,15 +11,15 @@ class AdminHr.Views.EmployeesIndex extends Backbone.View
     'submit #new_employee': 'createEmployee'
 
   render: ->
-    @$el.html @template()
+    @$el.html @template collection: @collection
     @collection.each @appendEmployee
     @
 
-  appendEmployee: (employee) ->
+  appendEmployee: (employee) =>
     employeeId = if employee.id? employee.id else employee.cid
     elementId = 'employee-' + employeeId
     view = new AdminHr.Views.Employee(model: employee, id: elementId)
-    $('tbody#employees').append view.render().el
+    @$('tbody#employees').append view.render().el
 
   createEmployee: (e) ->
     e.preventDefault()
