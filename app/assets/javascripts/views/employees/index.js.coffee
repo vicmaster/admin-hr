@@ -14,9 +14,10 @@ class AdminHr.Views.EmployeesIndex extends Backbone.View
     'click .more'             : 'handleMoreInfo'
     'click .back'             : 'handleBackInfo'
     'blur .last'              : 'handleMoreInfo'
+    'keypress .search-query'  : 'search'
 
   render: ->
-    @$el.html @template collection: @collection
+    @$el.html @template
     @collection.each @appendEmployee
     @$('.info:first').fadeIn()
     @
@@ -69,3 +70,22 @@ class AdminHr.Views.EmployeesIndex extends Backbone.View
   hideAndShowInfo: (toHide, toShow) ->
     toHide.hide()
     toShow.fadeIn()
+
+  search: (event) ->
+    if event.keyCode == 13
+      key = $('#searchEmployee').val()
+      $.ajax
+        url:  "/api/employees?keywords=#{key}"
+        datatype: 'get'
+        cache: false
+        success: (data) =>
+          @renderResults data
+
+
+  renderResults: (data) =>
+    @$el.html @template
+    @collection.reset data
+    $('tbody#employees').html ''
+    @collection.each @appendEmployee
+    @$('.info:first').fadeIn()
+    @

@@ -45,7 +45,7 @@ describe EmployeesController do
     let(:employee){ Fabricate :employee}
 
     before do
-      Employee.should_receive(:update_attributes).with(employee.id.to_s, employee).and_return employee
+      Employee.should_receive(:update).with(employee.id.to_s, employee).and_return employee
     end
 
     specify do

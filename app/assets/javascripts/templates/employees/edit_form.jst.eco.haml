@@ -1,0 +1,86 @@
+%h2#main-title.title-header-style
+  %a{hef: '#'} Edit employee information
+%form#new_employee
+  .info
+    .float-left
+      %label Status
+      %input{:name => "status", :type => "text", value: "<%= @employee.get('status') %>"}
+      %label First Name
+      %input{:name => "first_name", :type => "text", value: "<%= @employee.get('first_name') %>"}
+    .float-left
+      %label Last Name
+      %input{:name => "last_name", :type => "text", value: "<%= @employee.get('last_name') %>"}
+      %label Nickname
+      %input{:name => "nickname", :type => "text", value: "<%= @employee.get('nickname') %>"}
+    .float-left
+      %label Middle Name
+      %input{:name => "middle_name", :type => "text", value: "<%= @employee.get('middle_name') %>"}
+      %label Second Last Name
+      %input{:name => "second_last_name", :type => "text", value: "<%= @employee.get('second_last_name') %>", class: 'last'}
+    %ul.pager
+      %li
+        = link_to 'next', '#', class: 'more'
+  .info{style: 'display:none;' }
+    .float-left
+      %label Date of Birth
+      %input{:name => "date_of_birth", :type => "text", value: "<%= @employee.get('date_of_birth') %>"}
+      %label SSN
+      %input{:name => "ssn", :type => "text", value: "<%= @employee.get('ssn') %>"}
+    .float-left
+      %label Gender
+      %input{:name => "gender", :type => "text", value: "<%= @employee.get('gender') %>"}
+      %label Marital Status
+      %input{:name => "marital_status", :type => "text", value: "<%= @employee.get('marital_status') %>"}
+    .float-left
+      %label Country
+      %input{:name => "country", :type => "text", value: "<%= @employee.get('country') %>"}
+      %label Address Line 1
+      %input{:name => "address_line_1", :type => "text", value: "<%= @employee.get('address_line_1') %>", class: 'last'}
+    %ul.pager
+      %li
+        = link_to 'Previous', '#', class: 'back'
+      %li
+        = link_to 'Next', '#', class: 'more'
+  .info{style: 'display:none;'}
+    .float-left
+      %label Address Line 2
+      %input{:name => "address_line_2", :type => "text", value: "<%= @employee.get('address_line_2') %>"}
+      %label State
+      %input{:name => "state", :type => "text", value: "<%= @employee.get('state') %>"}
+    .float-left
+      %label Zipcode
+      %input{:name => "zip_code", :type => "text", value: "<%= @employee.get('zip_code') %>"}
+      %label Mobile Phone
+      %input{:name => "mobile_phone", :type => "text", value: "<%= @employee.get('mobile_phone') %>"}
+    .float-left
+      %label Home Phone
+      %input{:name => "home_phone", :type => "text", value: "<%= @employee.get('home_phone') %>"}
+      %label Work Email
+      %input{:name => "work_email", :type => "text", value: "<%= @employee.get('work_email') %>", class: 'last'}
+    %ul.pager
+      %li
+        = link_to 'Previous', '#', class: 'back'
+      %li
+        = link_to 'Next', '#', class: 'more'
+  .info{style: 'display:none;'}
+    .float-left
+      %label Home Email
+      %input{:name => "home_email", :type => "text", value: "<%= @employee.get('home_email') %>"}
+      %label Shirt Size
+      %input{:name => "shirt_size", :type => "text", value: "<%= @employee.get('shirt_size') %>"}
+    .float-left
+      %label Passport Number
+      %input{:name => "passport_number", :type => "text", value: "<%= @employee.get('passport_number') %>"}
+      %label Passport Expiration Date
+      %input{:name => "passport_expiration_date", :type => "text", value: "<%= @employee.get('passport_expiration_date') %>"}
+    .float-left
+      %label Visa Type
+      %input{:name => "visa_type", :type => "text", value: "<%= @employee.get('visa_type') %>"}
+      %label Visa Expiration Date
+      %input{:name => "visa_expiration_date", :type => "text", value: "<%= @employee.get('visa_expiration_date') %>"}
+    = link_to 'Return to List', '#',class: 'float-right btn btn-inverse', id: 'return-list'
+    %input#save.float-right.btn.btn-primary{:type => "submit", :value => "Save Changes"}
+    %ul.pager
+      %li
+        = link_to 'back', '#', class: 'back'
+  .clearfix

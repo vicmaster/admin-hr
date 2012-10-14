@@ -1,5 +1,6 @@
 %h2#main-title.title-header-style
-  = link_to 'Add New Employee', '#', class: 'add-new-employee'
+  %a{hef: '#', class: 'add-new-employee'}
+    <%= @type %>
 %form#new_employee
   .info{style: 'display:none;' }
     .float-left
@@ -19,7 +20,7 @@
       %input{:name => "second_last_name", :type => "text", class: 'last'}
     %ul.pager
       %li
-        = link_to 'more', '#', class: 'more'
+        = link_to 'Next', '#', class: 'more'
   .info{style: 'display:none;' }
     .float-left
       %label Date of Birth

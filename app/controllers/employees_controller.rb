@@ -2,7 +2,14 @@ class EmployeesController < ApplicationController
   respond_to :json
 
   def index
-    respond_with Employee.all
+    employees = if params[:keywords]
+                  #Employee.search { keywords params[:keywords] }.results
+                  Employee.where("middle_name ILIKE ? OR first_name ILIKE ? or last_name ILIKE ?",
+                                 "%#{params[:keywords]}%", "%#{params[:keywords]}%", "%#{params[:keywords]}%")
+                else
+                  Employee.all
+    end
+    respond_with employees
   end
 
   def create
@@ -14,7 +21,7 @@ class EmployeesController < ApplicationController
   end
 
   def update
-    respond_with Employee.update_attributes(params[:id], params[:employee])
+    respond_with Employee.update(params[:id], params[:employee])
   end
 
   def destroy
