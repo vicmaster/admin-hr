@@ -50,6 +50,7 @@ body.login-page {
   }
   .box-header {
     padding:35px 70px 20px;
+    h2{ color: #1F5B7B; }
   }
   .box-body {
     padding: 0 70px 30px;
@@ -65,8 +66,19 @@ body.login-page {
     }
   }
   .box-footer{
-    background-color: grey;
+    background-color: whiteSmoke;
     padding: 15px 70px;
+    #signin-footer a {
+      border-right: 1px solid #CCC;
+      color: #777;
+      display: inline-block;
+      margin-right: 8px;
+      padding-right: 6px;
+      text-decoration: none;
+      font-size: 11px;
+    }
+
+
     .form-note {
       margin: 0;
     }

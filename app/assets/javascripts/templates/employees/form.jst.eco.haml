@@ -1,64 +1,85 @@
-%h2#main-title Add New Employee
+%h2#main-title.title-header-style
+  = link_to 'Add New Employee', '#', class: 'add-new-employee'
 %form#new_employee
-  .float-left
-    %label Status
-    %input{:name => "status", :type => "text"}
-    %label First Name
-    %input{:name => "first_name", :type => "text"}
-  .float-left
-    %label Last Name
-    %input{:name => "last_name", :type => "text"}
-    %label Nickname
-    %input{:name => "nickname", :type => "text"}
-  .float-left
-    %label Middle Name
-    %input{:name => "middle_name", :type => "text"}
-    %label Second Last Name
-    %input{:name => "second_last_name", :type => "text"}
-  .float-left
-    %label Date of Birth
-    %input{:name => "date_of_birth", :type => "text"}
-    %label SSN
-    %input{:name => "ssn", :type => "text"}
-  .float-left
-    %label Gender
-    %input{:name => "gender", :type => "text"}
-    %label Marital Status
-    %input{:name => "marital_status", :type => "text"}
-  .float-left
-    %label Country
-    %input{:name => "country", :type => "text"}
-    %label Address Line 1
-    %input{:name => "address_line_1", :type => "text"}
-  .float-left
-    %label Address Line 2
-    %input{:name => "address_line_2", :type => "text"}
-    %label State
-    %input{:name => "state", :type => "text"}
-  .float-left
-    %label Zipcode
-    %input{:name => "zip_code", :type => "text"}
-    %label Mobile Phone
-    %input{:name => "mobile_phone", :type => "text"}
-  .float-left
-    %label Home Phone
-    %input{:name => "home_phone", :type => "text"}
-    %label Work Email
-    %input{:name => "work_email", :type => "text"}
-  .float-left
-    %label Home Email
-    %input{:name => "home_email", :type => "text"}
-    %label Shirt Size
-    %input{:name => "shirt_size", :type => "text"}
-  .float-left
-    %label Passport Number
-    %input{:name => "passport_number", :type => "text"}
-    %label Passport Expiration Date
-    %input{:name => "passport_expiration_date", :type => "text"}
-  .float-left
-    %label Visa Type
-    %input{:name => "visa_type", :type => "text"}
-    %label Visa Expiration Date
-    %input{:name => "visa_expiration_date", :type => "text"}
+  .info{style: 'display:none;' }
+    .float-left
+      %label Status
+      %input{:name => "status", :type => "text"}
+      %label First Name
+      %input{:name => "first_name", :type => "text"}
+    .float-left
+      %label Last Name
+      %input{:name => "last_name", :type => "text"}
+      %label Nickname
+      %input{:name => "nickname", :type => "text"}
+    .float-left
+      %label Middle Name
+      %input{:name => "middle_name", :type => "text"}
+      %label Second Last Name
+      %input{:name => "second_last_name", :type => "text", class: 'last'}
+    %ul.pager
+      %li
+        = link_to 'more', '#', class: 'more'
+  .info{style: 'display:none;' }
+    .float-left
+      %label Date of Birth
+      %input{:name => "date_of_birth", :type => "text"}
+      %label SSN
+      %input{:name => "ssn", :type => "text"}
+    .float-left
+      %label Gender
+      %input{:name => "gender", :type => "text"}
+      %label Marital Status
+      %input{:name => "marital_status", :type => "text"}
+    .float-left
+      %label Country
+      %input{:name => "country", :type => "text"}
+      %label Address Line 1
+      %input{:name => "address_line_1", :type => "text"}
+    %ul.pager
+      %li
+        = link_to 'Previous', '#', class: 'back'
+      %li
+        = link_to 'Next', '#', class: 'more'
+  .info{style: 'display:none;'}
+    .float-left
+      %label Address Line 2
+      %input{:name => "address_line_2", :type => "text"}
+      %label State
+      %input{:name => "state", :type => "text"}
+    .float-left
+      %label Zipcode
+      %input{:name => "zip_code", :type => "text"}
+      %label Mobile Phone
+      %input{:name => "mobile_phone", :type => "text"}
+    .float-left
+      %label Home Phone
+      %input{:name => "home_phone", :type => "text"}
+      %label Work Email
+      %input{:name => "work_email", :type => "text"}
+    %ul.pager
+      %li
+        = link_to 'Previous', '#', class: 'back'
+      %li
+        = link_to 'Next', '#', class: 'more'
+  .info{style: 'display:none;'}
+    .float-left
+      %label Home Email
+      %input{:name => "home_email", :type => "text"}
+      %label Shirt Size
+      %input{:name => "shirt_size", :type => "text"}
+    .float-left
+      %label Passport Number
+      %input{:name => "passport_number", :type => "text"}
+      %label Passport Expiration Date
+      %input{:name => "passport_expiration_date", :type => "text"}
+    .float-left
+      %label Visa Type
+      %input{:name => "visa_type", :type => "text"}
+      %label Visa Expiration Date
+      %input{:name => "visa_expiration_date", :type => "text"}
+    %input#new_employee.float-right.btn.btn-primary{:type => "submit", :value => "Add new employee"}
+    %ul.pager
+      %li
+        = link_to 'back', '#', class: 'back'
   .clearfix
-  %input#new_employee.float-right{:type => "submit", :value => "Add new employee"}

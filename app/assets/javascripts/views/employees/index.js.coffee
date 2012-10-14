@@ -8,11 +8,17 @@ class AdminHr.Views.EmployeesIndex extends Backbone.View
   template: JST['templates/employees/index']
 
   events:
-    'submit #new_employee': 'createEmployee'
+    'submit #new_employee'    : 'createEmployee'
+    'click .add-new-employee' : 'hideEmployeeForm'
+    'click #complete-list'    : 'hideEmployeeList'
+    'click .more'             : 'handleMoreInfo'
+    'click .back'             : 'handleBackInfo'
+    'blur .last'              : 'handleMoreInfo'
 
   render: ->
     @$el.html @template collection: @collection
     @collection.each @appendEmployee
+    @$('.info:first').fadeIn()
     @
 
   appendEmployee: (employee) =>
@@ -21,8 +27,8 @@ class AdminHr.Views.EmployeesIndex extends Backbone.View
     view = new AdminHr.Views.Employee(model: employee, id: elementId)
     @$('tbody#employees').append view.render().el
 
-  createEmployee: (e) ->
-    e.preventDefault()
+  createEmployee: (event) ->
+    event.preventDefault()
     data = @$('form').serializeObject()
 
     @collection.create data,
@@ -37,5 +43,29 @@ class AdminHr.Views.EmployeesIndex extends Backbone.View
         alert "#{attribute} #{messages}" for message in messages
 
   removeOneEmployee: (e) ->
-      employeeId = if e.id? e.id else e.cid
-      @$el.find('#employee-' + employeeId).remove()
+    employeeId = if e.id? e.id else e.cid
+    @$el.find('#employee-' + employeeId).remove()
+
+  hideEmployeeForm: (event) ->
+    event.preventDefault()
+    @$('#new_employee').slideToggle()
+
+  hideEmployeeList: (event) ->
+    event.preventDefault()
+    @$('#employee-list').slideToggle()
+
+  handleMoreInfo: (event) ->
+    event.preventDefault()
+    toHide = @$(event.target).parents('.info')
+    toShow = toHide.next('.info')
+    @hideAndShowInfo toHide, toShow
+
+  handleBackInfo: (event) ->
+    event.preventDefault()
+    toHide = @$(event.target).parents('.info')
+    toShow = toHide.prev('.info')
+    @hideAndShowInfo toHide, toShow
+
+  hideAndShowInfo: (toHide, toShow) ->
+    toHide.hide()
+    toShow.fadeIn()

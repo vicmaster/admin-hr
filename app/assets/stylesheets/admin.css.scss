@@ -1,5 +1,14 @@
+.title-header-style{
+  background: -webkit-linear-gradient(top, #185675, #144E6D);
+  a{
+    color: white;
+    margin-left: 5px;
+  }
+}
+
 #container-app{
-  margin: auto 6px;
+  margin: 0 auto;
+  width: 800px;
 }
 
 .float-left{

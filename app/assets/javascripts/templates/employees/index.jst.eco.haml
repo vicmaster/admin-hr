@@ -1,6 +1,7 @@
 <%- JST['templates/employees/form']() %>
-%h2 List of Employees
-%table.table.table-striped
+%h2.title-header-style
+  =link_to 'List of Employees', '#', id: 'complete-list'
+%table#employee-list.table.table-striped
   %thead
     %tr
       %th Status
