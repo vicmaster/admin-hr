@@ -5,4 +5,4 @@
 %td
   %a#delete{ href: '#', class: 'btn btn-danger'} Delete
 %td
-  %a#edit{ href: '#employee/', class: 'btn btn-primary'} Edit
+  %a#edit{ href: "#employee/edit/<%= @employee.get('id')%>", class: 'btn btn-primary'} Edit

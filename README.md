@@ -10,9 +10,16 @@ Admin HR app
 
 ```
 $ git clone git@github.com:vicmaster/admin-hr.git
+$ cd admin-hr
 $ bundle install
 $ rake db:setup
 ```
+
+###Note: We are using postgress, then if you use mac and you have
+###problems at moment to run setup you need install pg
+### you can use this postgress for mac is very easy to use the link is
+http://postgresapp.com/
+
 ## TDD: Set Guard
 
 ```
@@ -20,11 +27,11 @@ $ rake db:test:prepare
 $ bundle exec guard start
 ```
 
-## We are using Devise then to create a new user you need go to rails
-console like
+### We are using Devise then to create a new user you need
+### go into rails console
 ```
 $ rails console
-Admin.create!({:email => "heriberto.perez@crowdint.com", :password => "12345679", :password_confirmation => "12345679" })
+Admin.create!({:email => "heriberto.perez@crowdint.com", :password => "123", :password_confirmation => "123" })
 ```
 
 ## Run Application

@@ -3,9 +3,10 @@ window.AdminHr =
   Collections: {}
   Views: {}
   Routers: {}
+  Router: null
 
   init: ->
-    new AdminHr.Routers.Employees()
+    @Router = new AdminHr.Routers.Employees()
     Backbone.history.start()
 
 $.fn.serializeObject = ->

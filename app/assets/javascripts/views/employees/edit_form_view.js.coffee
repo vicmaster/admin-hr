@@ -40,8 +40,9 @@ class AdminHr.Views.EmployeesEditFormView extends Backbone.View
     data = form.serializeObject()
     @model.save data,
       success: (data) =>
-        alert 'Employee Updated'
-        window.location.href = "/"
+        window.location.href = "/#crew"
+        #view = new AdminHr.Views.EmployeesIndex 
+        #$('#container-app').html view.render().el
 
   returnList: (event) ->
     event.preventDefault()

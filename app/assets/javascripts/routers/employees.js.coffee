@@ -2,7 +2,7 @@ class AdminHr.Routers.Employees extends Backbone.Router
   routes:
     '' : 'dashboard'
     'crew' : 'manageCrew'
-    'employee/:id' : 'editEmployee'
+    'employee/edit/:id' : 'editEmployee'
 
   manageCrew: ->
     @collection = new AdminHr.Collections.Employees()
@@ -15,5 +15,8 @@ class AdminHr.Routers.Employees extends Backbone.Router
     $('#container-app').html view.render().el
 
   editEmployee: (employeeId) ->
-    view = new AdminHr.Views.EmployeesEditView
-    $('#container-app').html view.render().el
+    employee = new AdminHr.Models.Employee({id: employeeId})
+
+    employee.fetch success: ->
+      view = new AdminHr.Views.EmployeesEditFormView model: employee
+      $('#container-app').html view.render().el

@@ -4,7 +4,7 @@ class AdminHr.Views.Employee extends Backbone.View
 
   events:
     'click #delete' : 'deleteEmployee'
-    'click #edit'   : 'editEmployee'
+    #'click #edit'   : 'editEmployee'
 
   template: JST['templates/employees/employee']
 
