@@ -14,7 +14,7 @@ class AdminHr.Views.EmployeesIndex extends Backbone.View
     'click .more'             : 'handleMoreInfo'
     'click .back'             : 'handleBackInfo'
     'blur .last'              : 'handleMoreInfo'
-    'keypress .search-query'  : 'search'
+    'keypress .search-query'  : 'searchEmployee'
 
   render: ->
     @$el.html @template
@@ -71,14 +71,17 @@ class AdminHr.Views.EmployeesIndex extends Backbone.View
     toHide.hide()
     toShow.fadeIn()
 
-  search: (event) ->
+  searchEmployee: (event) ->
     if event.keyCode == 13
+      event.preventDefault()
       key = $('#searchEmployee').val()
+      console.log 'no recargo'
       $.ajax
         url:  "/api/employees?keywords=#{key}"
         datatype: 'get'
         cache: false
         success: (data) =>
+          console.log "word to search#{key}"
           @renderResults data
 
 
