@@ -1,7 +1,7 @@
 shared_examples "web session" do
 
   let(:user) do
-    mock 'User', email: 'admin@test.com', password: '12345679'
+    mock 'User', email: 'test@test.com', password: '12345679'
   end
 
   before do

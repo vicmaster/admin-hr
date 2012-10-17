@@ -75,13 +75,11 @@ class AdminHr.Views.EmployeesIndex extends Backbone.View
     if event.keyCode == 13
       event.preventDefault()
       key = $('#searchEmployee').val()
-      console.log 'no recargo'
       $.ajax
         url:  "/api/employees?keywords=#{key}"
         datatype: 'get'
         cache: false
         success: (data) =>
-          console.log "word to search#{key}"
           @renderResults data
 
 

@@ -31,7 +31,8 @@ $ bundle exec guard start
 ### go into rails console
 ```
 $ rails console
-Admin.create!({:email => "heriberto.perez@crowdint.com", :password => "123", :password_confirmation => "123" })
+Admin.create!({:email => "test@test.com", :password =>
+"12345679", :password_confirmation => "12345679" })
 ```
 
 ## Run Application
