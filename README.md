@@ -47,3 +47,7 @@ $ rails server
 
 
 ## Aditional Usage
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/vicmaster/admin-hr/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
